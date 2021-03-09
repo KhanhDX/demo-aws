@@ -27,4 +27,24 @@ public class MyEntitiesServiceImpl implements MyEntitiesService {
     public List<MyEntity> getEntitiesByName(String name) {
         return myEntityRepo.findMyEntitiesByName(name);
     }
+
+    @Override
+    public void addNewEntity(MyEntity myEntity) {
+        myEntityRepo.save(myEntity);
+    }
+
+    @Override
+    public void updateEntity(Integer id, MyEntity newEntity) {
+        MyEntity currEntity = myEntityRepo.findMyEntityById(id);
+
+        currEntity.setName(newEntity.getName());
+        currEntity.setAge(newEntity.getAge());
+
+        myEntityRepo.save(currEntity);
+    }
+
+    @Override
+    public void deleteEntity(Integer id) {
+        myEntityRepo.deleteById(id);
+    }
 }

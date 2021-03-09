@@ -36,5 +36,21 @@ public class HelloWorldController {
         return new ResponseEntity<>(myEntitiesService.getAllEntities(),HttpStatus.OK);
     }
 
+    @PostMapping("/create-entity")
+    public ResponseEntity<?> createEntity (@RequestBody MyEntity myEntity) {
+        myEntitiesService.addNewEntity(myEntity);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 
+    @PutMapping("/update-entity/{id}")
+    public ResponseEntity<?> updateEntity (@PathVariable Integer id,@RequestBody MyEntity myEntity) {
+        myEntitiesService.updateEntity(id, myEntity);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @DeleteMapping("/delete-entity/{id}")
+    public ResponseEntity<?> deleteEntity (@PathVariable Integer id) {
+        myEntitiesService.deleteEntity(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

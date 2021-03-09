@@ -10,4 +10,7 @@ public interface MyEntitiesService {
     List<MyEntity> getAllEntities();
     MyEntity getEntityById(Integer id);
     List<MyEntity> getEntitiesByName(String name);
+    void addNewEntity (MyEntity myEntity);
+    void updateEntity (Integer id, MyEntity newEntity);
+    void deleteEntity (Integer id);
 }
