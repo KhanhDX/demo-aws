@@ -1,9 +1,9 @@
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://demodb.cbeyiipzstfi.us-east-1.rds.amazonaws.com:3306/demodb
-    username: admin
-    password: Khanhkipkip1998
+    url: jdbc:mysql://localhost:3306/demodb
+    username: root
+    password: 123456
   jpa:
     hibernate.ddl-auto: update
     generate-ddl: true
